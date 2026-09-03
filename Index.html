@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marquence | Brand Authority Consulting — India</title>
+<meta name="description" content="We architect market influence for founders and C-suite leaders across India. Beyond brand identity into pricing power and legitimacy.">
+<meta property="og:title" content="Marquence — Beyond Branding Into Influence">
+<meta property="og:description" content="Brand authority architects for founders and executives across South India.">
+<meta name="theme-color" content="#0A0A0A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"Marquence","slogan":"Beyond Branding Into Influence","areaServed":["IN"],"priceRange":"₹1.75L–₹15L","address":{"@type":"PostalAddress","streetAddress":"Aspire Coworks, No.39/7-1, Third Floor, 7th Main, Opposite Dr. Ambedkar College Ground, Appareddy Palya, Indiranagar","addressLocality":"Bengaluru North","postalCode":"560038","addressCountry":"IN"}}
+</script>
+<style>
+/* ============================================================
+   MARQUENCE — design tokens
+   Palette and type scale per §04 Visual Identity Brief.
+   Gold is flat. No gradients on gold, no glow, no metallic texture.
+   ============================================================ */
+:root{
+  --ink:#0A0A0A;
+  --charcoal:#1A1A1A;
+  --paper:#FAFAF8;
+  --bone:#F4F1E8;
+  --gold:#C9A227;
+  --gold-muted:#A38A2E;
+  --on-dark:#F5F5F0;
+  --on-light:#1A1A1A;
+  --rule:#D9D9D9;
+  --rule-dark:#2C2C2C;
+
+  --serif:"Playfair Display",Georgia,"Times New Roman",serif;
+  --sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+
+  --pad-x:120px;
+  --pad-y:140px;
+  --max:1440px;
+  --nav-h:76px;
+}
+
+*,*::before,*::after{box-sizing:border-box;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{
+  margin:0;background:var(--ink);color:var(--on-dark);
+  font-family:var(--sans);font-size:17px;line-height:1.65;font-weight:400;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+}
+img,svg{display:block;max-width:100%;}
+a{color:inherit;}
+
+/* ---------- structure ---------- */
+.section{padding:var(--pad-y) var(--pad-x);position:relative;}
+.wrap{max-width:var(--max);margin:0 auto;}
+.dark{background:var(--ink);color:var(--on-dark);}
+.charcoal{background:var(--charcoal);color:var(--on-dark);}
+.light{background:var(--paper);color:var(--on-light);}
+.cream{background:var(--bone);color:var(--on-light);}
+
+/* asymmetric two-column: headline block offset against the grid */
+.split{display:grid;grid-template-columns:repeat(12,1fr);gap:48px;}
+.split > .col-head{grid-column:1 / span 5;}
+.split > .col-body{grid-column:7 / span 6;}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:96px;}
+
+.measure{max-width:64ch;}
+.measure-wide{max-width:72ch;}
+
+/* ---------- type ---------- */
+h1,h2,h3,h4{font-family:var(--serif);font-weight:500;margin:0;}
+h1{font-size:clamp(38px,5.2vw,76px);line-height:1.08;letter-spacing:-0.02em;}
+h2{font-size:clamp(30px,3.1vw,44px);line-height:1.18;letter-spacing:-0.012em;}
+h3{font-size:clamp(22px,1.9vw,28px);line-height:1.3;}
+p{margin:0 0 1.15em;}
+p:last-child{margin-bottom:0;}
+strong{font-weight:500;}
+em{font-style:italic;}
+
+.eyebrow{
+  font-family:var(--sans);font-size:12px;font-weight:500;line-height:1.4;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--gold);
+  margin:0 0 28px;display:block;
+}
+.light .eyebrow,.cream .eyebrow{color:rgba(26,26,26,.7);}
+.light .eyebrow.gold,.cream .eyebrow.gold{color:var(--gold-muted);}
+.lead{font-size:clamp(18px,1.5vw,21px);line-height:1.55;max-width:62ch;}
+.dark .lead,.charcoal .lead{color:rgba(245,245,240,.82);}
+.light .lead,.cream .lead{color:rgba(26,26,26,.78);}
+.small{font-size:14px;line-height:1.5;}
+.dim{opacity:.62;}
+.serif-line{font-family:var(--serif);font-size:clamp(24px,2.5vw,34px);line-height:1.32;letter-spacing:-0.01em;}
+
+/* gold hairline rule — the primary structural device */
+.rule{height:1px;background:var(--gold);border:0;margin:36px 0;transform-origin:left center;}
+.rule.short{width:88px;}
+.rule.grey{background:var(--rule);}
+.dark .rule.grey,.charcoal .rule.grey{background:var(--rule-dark);}
+
+/* ---------- buttons ---------- */
+.btn{
+  display:inline-block;font-family:var(--sans);font-size:13px;font-weight:500;
+  letter-spacing:.1em;text-transform:uppercase;text-decoration:none;
+  padding:17px 30px;border:1px solid var(--gold);color:var(--gold);
+  background:transparent;cursor:pointer;transition:background-color .2s ease,color .2s ease;
+}
+.btn:hover,.btn:focus-visible{background:var(--gold);color:var(--ink);}
+.light .btn,.cream .btn{border-color:var(--gold-muted);color:var(--gold-muted);}
+.light .btn:hover,.cream .btn:hover,.light .btn:focus-visible,.cream .btn:focus-visible{background:var(--gold-muted);color:var(--paper);}
+.btn-text{
+  display:inline-block;font-size:14px;font-weight:500;letter-spacing:.04em;
+  text-decoration:none;color:var(--gold);border-bottom:1px solid var(--gold);
+  padding-bottom:3px;transition:border-color .2s ease,color .2s ease;
+}
+.btn-text:hover,.btn-text:focus-visible{color:var(--gold-muted);border-color:transparent;}
+.light .btn-text,.cream .btn-text{color:var(--gold-muted);border-color:var(--gold-muted);}
+.actions{display:flex;flex-wrap:wrap;gap:32px;align-items:center;margin-top:44px;}
+
+/* ---------- navigation ---------- */
+header.nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;height:var(--nav-h);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 var(--pad-x);background:rgba(10,10,10,.86);
+  backdrop-filter:saturate(140%) blur(14px);
+  border-bottom:1px solid var(--rule-dark);transition:background-color .3s ease;
+}
+.lockup{display:flex;align-items:center;gap:14px;text-decoration:none;background:none;border:0;padding:0;cursor:pointer;}
+.lockup .mark{width:30px;height:30px;}
+.lockup .word{
+  font-family:var(--serif);font-size:19px;letter-spacing:.2em;color:var(--on-dark);
+  padding-left:14px;border-left:1px solid rgba(201,162,39,.45);line-height:1;
+}
+nav.primary{display:flex;align-items:center;gap:38px;}
+nav.primary button{
+  background:none;border:0;padding:6px 0;cursor:pointer;color:rgba(245,245,240,.72);
+  font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.16em;
+  text-transform:uppercase;border-bottom:1px solid transparent;transition:color .2s ease,border-color .2s ease;
+}
+nav.primary button:hover,nav.primary button:focus-visible{color:var(--on-dark);}
+nav.primary button[aria-current="page"]{color:var(--gold);border-bottom-color:var(--gold);}
+.nav-cta{padding:13px 22px;font-size:11px;}
+.nav-toggle{display:none;background:none;border:1px solid var(--rule-dark);color:var(--on-dark);
+  padding:9px 13px;font-family:var(--sans);font-size:11px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;}
+main{padding-top:var(--nav-h);}
+[id]{scroll-margin-top:calc(var(--nav-h) + 24px);}
+
+/* ---------- hero ---------- */
+.hero{padding-top:150px;padding-bottom:130px;position:relative;overflow:hidden;}
+.hero .wrap{position:relative;z-index:2;}
+.hero h1{max-width:17ch;}
+.hero .rule{margin:40px 0 34px;max-width:520px;}
+/* fine lattice — abstract geometric structure, no imagery */
+.lattice{
+  position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.5;
+  background-image:linear-gradient(rgba(201,162,39,.055) 1px,transparent 1px),
+                   linear-gradient(90deg,rgba(201,162,39,.055) 1px,transparent 1px);
+  background-size:96px 96px;
+  -webkit-mask-image:radial-gradient(ellipse 70% 80% at 82% 12%,#000,transparent 72%);
+  mask-image:radial-gradient(ellipse 70% 80% at 82% 12%,#000,transparent 72%);
+}
+.hero-mark{position:absolute;right:var(--pad-x);top:120px;width:290px;opacity:.9;z-index:1;}
+
+/* ---------- cards & grids ---------- */
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);margin-top:72px;}
+.dark .grid-4,.charcoal .grid-4{background:var(--rule-dark);}
+.card{background:var(--paper);padding:44px 38px 48px;}
+.dark .card,.charcoal .card{background:var(--ink);}
+.card .num{font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.16em;color:var(--gold);display:block;margin-bottom:22px;}
+.card h3{margin-bottom:20px;}
+.card .meta{font-size:15px;line-height:1.6;margin-bottom:14px;}
+.card .meta span{display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--gold-muted);margin-bottom:5px;}
+.dark .card .meta span,.charcoal .card .meta span{color:var(--gold);}
+
+/* pull-quote — gold left rule on cream field */
+.pull{
+  background:var(--bone);color:var(--on-light);border-left:2px solid var(--gold);
+  padding:52px 60px;margin:80px 0 0;max-width:900px;
+  font-family:var(--serif);font-size:clamp(20px,2.05vw,27px);line-height:1.4;letter-spacing:-0.01em;
+}
+.pull.plain{font-family:var(--sans);font-size:17px;line-height:1.65;}
+
+/* ---------- tables ---------- */
+table{width:100%;border-collapse:collapse;font-size:16px;margin-top:44px;}
+th,td{text-align:left;padding:20px 24px;vertical-align:top;border-bottom:1px solid var(--rule);}
+thead th{
+  background:var(--charcoal);color:var(--on-dark);font-family:var(--sans);font-size:12px;
+  font-weight:500;letter-spacing:.14em;text-transform:uppercase;border-bottom:0;
+}
+tbody tr:nth-child(even){background:var(--bone);}
+td strong{font-weight:500;}
+.dark table,.charcoal table{color:var(--on-dark);}
+.charcoal thead th{background:#262626;}
+.dark thead th{background:#202020;}
+.dark th,.dark td,.charcoal th,.charcoal td{border-bottom-color:var(--rule-dark);}
+.dark tbody tr:nth-child(even),.charcoal tbody tr:nth-child(even){background:rgba(255,255,255,.028);}
+.num-col{font-variant-numeric:tabular-nums;}
+
+/* ---------- market fork panels ---------- */
+.fork{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule-dark);margin-top:64px;}
+.panel{
+  background:var(--ink);padding:72px 60px 66px;text-align:left;border:0;
+  font:inherit;color:inherit;cursor:pointer;transition:background-color .3s ease;
+}
+.panel:hover,.panel:focus-visible{background:#131313;}
+.panel .label{font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--gold);display:block;margin-bottom:26px;}
+.panel h3{margin-bottom:20px;}
+.panel p{font-size:16px;color:rgba(245,245,240,.72);max-width:44ch;}
+.panel .go{margin-top:34px;display:inline-block;font-size:14px;color:var(--gold);
+  border-bottom:1px solid var(--gold);padding-bottom:3px;}
+.panel[data-selected="true"]{background:#131313;box-shadow:inset 2px 0 0 var(--gold);}
+
+/* ---------- tier cards ---------- */
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:64px;align-items:start;}
+.tier{border:1px solid var(--rule);padding:46px 38px 44px;background:var(--paper);}
+.dark .tier,.charcoal .tier{border-color:var(--rule-dark);background:var(--ink);}
+.tier.anchor{border-color:var(--gold);position:relative;transform:translateY(-22px);padding-bottom:66px;}
+.tier .tag{font-family:var(--sans);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-muted);display:block;margin-bottom:14px;}
+.dark .tier .tag,.charcoal .tier .tag{color:var(--gold);}
+.tier h3{margin-bottom:8px;}
+.tier .who{font-size:14px;opacity:.7;margin-bottom:26px;}
+.tier .price{font-family:var(--serif);font-size:24px;letter-spacing:-0.01em;margin-bottom:24px;}
+.tier .price small{display:block;font-family:var(--sans);font-size:12px;letter-spacing:.14em;
+  text-transform:uppercase;opacity:.6;margin-bottom:8px;}
+.tier .inc{font-size:15px;line-height:1.6;margin-bottom:20px;}
+.tier .note{font-size:15px;line-height:1.6;opacity:.78;}
+.anchor-flag{position:absolute;top:-1px;left:-1px;background:var(--gold);color:var(--ink);
+  font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;padding:7px 14px;}
+
+/* ---------- module spine ---------- */
+.spine{position:relative;margin-top:78px;padding-left:78px;}
+.spine::before{content:"";position:absolute;left:15px;top:8px;bottom:8px;width:1px;background:var(--rule);}
+.dark .spine::before,.charcoal .spine::before{background:var(--rule-dark);}
+.spine-fill{position:absolute;left:15px;top:8px;width:1px;background:var(--gold);height:0;transition:height .12s linear;}
+.module{position:relative;padding-bottom:76px;}
+.module:last-child{padding-bottom:0;}
+.module::before{content:"";position:absolute;left:-70px;top:12px;width:9px;height:9px;
+  border:1px solid var(--gold);background:var(--paper);transform:rotate(45deg);}
+.dark .module::before,.charcoal .module::before{background:var(--ink);}
+.module.lit::before{background:var(--gold);}
+.module .mnum{font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.16em;color:var(--gold-muted);display:block;margin-bottom:12px;}
+.dark .module .mnum,.charcoal .module .mnum{color:var(--gold);}
+.module h3{margin-bottom:6px;}
+.module .when{font-size:13px;letter-spacing:.1em;text-transform:uppercase;opacity:.55;margin-bottom:22px;}
+.module .scope{font-family:var(--serif);font-size:19px;line-height:1.5;margin-bottom:18px;opacity:.9;}
+.module .out{font-size:15px;opacity:.72;margin-top:18px;}
+.module .out b{font-weight:500;color:var(--gold-muted);}
+.dark .module .out b,.charcoal .module .out b{color:var(--gold);}
+
+/* ---------- horizontal sequence ---------- */
+.seq{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:64px;border-top:1px solid var(--rule-dark);}
+.seq .step{padding:34px 34px 40px 0;position:relative;}
+.seq .step .snum{font-size:12px;letter-spacing:.16em;color:var(--gold);display:block;margin-bottom:14px;}
+.seq .step h4{font-family:var(--serif);font-size:21px;font-weight:500;margin:0 0 12px;}
+.seq .step p{font-size:15px;line-height:1.6;opacity:.72;margin:0;}
+.seq .step .when{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);opacity:.9;margin-bottom:10px;display:block;}
+.seq .step .deliv{font-size:14px;margin-top:16px;opacity:.62;font-style:italic;}
+.seq-progress{height:1px;background:var(--gold);width:0;transition:width .5s ease-out;margin-top:0;}
+
+/* ---------- case studies ---------- */
+.case{border-top:1px solid var(--rule);padding-top:52px;margin-top:96px;}
+.case:first-of-type{margin-top:64px;}
+.case .stamp{font-family:var(--sans);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-muted);margin-bottom:10px;}
+.case .prog{font-size:14px;opacity:.6;margin-bottom:34px;}
+.case .headline{font-family:var(--serif);font-size:clamp(24px,2.4vw,32px);line-height:1.28;letter-spacing:-0.01em;max-width:24ch;margin-bottom:44px;}
+.case-body{display:grid;grid-template-columns:repeat(12,1fr);gap:48px;}
+.case-body .lhs{grid-column:1 / span 6;}
+.case-body .rhs{grid-column:7 / span 6;}
+.case h4{font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--gold-muted);margin:0 0 14px;}
+.case ul{margin:0;padding-left:18px;}
+.case li{margin-bottom:10px;font-size:16px;line-height:1.55;}
+.case blockquote{margin:36px 0 0;padding-left:22px;border-left:2px solid var(--gold);
+  font-family:var(--serif);font-size:19px;line-height:1.5;}
+.case blockquote cite{display:block;font-family:var(--sans);font-size:13px;font-style:normal;
+  letter-spacing:.1em;text-transform:uppercase;opacity:.6;margin-top:18px;}
+.placeholder-note{background:var(--bone);border-left:2px solid var(--gold);padding:28px 34px;font-size:15px;line-height:1.6;margin-bottom:8px;}
+
+/* ---------- form ---------- */
+.form{max-width:760px;margin-top:56px;}
+.field{margin-bottom:36px;}
+.field label{display:block;font-family:var(--sans);font-size:12px;font-weight:500;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
+.field .opt{color:rgba(245,245,240,.45);letter-spacing:.08em;}
+.field input,.field select,.field textarea{
+  width:100%;background:transparent;border:0;border-bottom:1px solid var(--rule-dark);
+  color:var(--on-dark);font-family:var(--sans);font-size:17px;padding:12px 0;
+  border-radius:0;transition:border-color .2s ease;
+}
+.field textarea{border:1px solid var(--rule-dark);padding:14px 16px;resize:vertical;line-height:1.6;}
+.field input:focus,.field select:focus,.field textarea:focus{outline:0;border-color:var(--gold);}
+.field select{-webkit-appearance:none;appearance:none;cursor:pointer;
+  background-image:linear-gradient(45deg,transparent 50%,var(--gold) 50%),linear-gradient(135deg,var(--gold) 50%,transparent 50%);
+  background-position:calc(100% - 12px) calc(50% + 2px),calc(100% - 7px) calc(50% + 2px);
+  background-size:5px 5px,5px 5px;background-repeat:no-repeat;}
+.field select option{background:var(--charcoal);color:var(--on-dark);}
+.field .help{font-size:14px;line-height:1.5;opacity:.55;margin-top:12px;}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:36px;}
+.form-foot{margin-top:44px;display:flex;flex-wrap:wrap;gap:26px;align-items:center;}
+.err{color:var(--gold);font-size:14px;margin-top:10px;display:none;}
+.field.invalid input,.field.invalid select{border-color:var(--gold);}
+.field.invalid .err{display:block;}
+
+/* ---------- contact block ---------- */
+.contacts{display:grid;grid-template-columns:1fr 1fr;gap:56px;margin-top:52px;max-width:820px;}
+.contacts .who{font-family:var(--sans);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
+.light .contacts .who,.cream .contacts .who{color:var(--gold-muted);}
+.contacts .name{font-family:var(--serif);font-size:23px;margin-bottom:6px;}
+.contacts .role,.contacts .det{font-size:15px;opacity:.68;}
+
+/* ---------- credibility strip ---------- */
+.strip{border-top:1px solid var(--rule-dark);border-bottom:1px solid var(--rule-dark);
+  padding:30px 0;margin-top:96px;display:flex;flex-wrap:wrap;gap:14px 40px;justify-content:center;
+  font-size:13px;letter-spacing:.1em;text-transform:uppercase;opacity:.66;text-align:center;}
+
+/* ---------- footer ---------- */
+footer{background:var(--ink);border-top:1px solid var(--rule-dark);padding:96px var(--pad-x) 56px;}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:56px;max-width:var(--max);margin:0 auto;}
+.foot-grid h5{font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--gold);margin:0 0 22px;}
+.foot-grid ul{list-style:none;margin:0;padding:0;}
+.foot-grid li{margin-bottom:13px;}
+.foot-grid li button,.foot-grid li a{background:none;border:0;padding:0;cursor:pointer;color:rgba(245,245,240,.7);
+  font-family:var(--sans);font-size:15px;text-decoration:none;transition:color .2s ease;}
+.foot-grid li button:hover,.foot-grid li a:hover{color:var(--on-dark);}
+.foot-statement{font-family:var(--serif);font-size:clamp(22px,2.2vw,30px);line-height:1.3;opacity:.6;margin-top:20px;max-width:15ch;}
+.foot-base{max-width:var(--max);margin:72px auto 0;padding-top:30px;border-top:1px solid var(--rule-dark);
+  display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;font-size:13px;opacity:.5;}
+
+/* ---------- motion ---------- */
+.reveal{opacity:0;transform:translateY(12px);transition:opacity .4s ease-out,transform .4s ease-out;}
+.reveal.in{opacity:1;transform:none;}
+.draw{transform:scaleX(0);transition:transform .6s ease-out;}
+.draw.in{transform:scaleX(1);}
+.trace{stroke-dasharray:var(--len);stroke-dashoffset:var(--len);}
+.trace.in{transition:stroke-dashoffset 1.6s ease-out;stroke-dashoffset:0;}
+.mark-draw path,.mark-draw line{stroke-dasharray:300;stroke-dashoffset:300;animation:markdraw 1.2s ease-out forwards;}
+.mark-draw path:nth-child(2){animation-delay:.28s;}
+.mark-draw path:nth-child(3),.mark-draw line{animation-delay:.5s;}
+@keyframes markdraw{to{stroke-dashoffset:0;}}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  .reveal{opacity:1;transform:none;transition:none;}
+  .draw{transform:scaleX(1);transition:none;}
+  .trace{stroke-dashoffset:0;transition:none;}
+  .mark-draw path,.mark-draw line{stroke-dashoffset:0;animation:none;}
+  *{transition-duration:.01ms !important;}
+}
+
+/* ---------- responsive ---------- */
+@media (max-width:1180px){
+  :root{--pad-x:64px;--pad-y:110px;}
+  .grid-4{grid-template-columns:1fr 1fr;}
+  .seq{grid-template-columns:1fr 1fr;}
+  .hero-mark{width:200px;opacity:.5;}
+}
+@media (max-width:900px){
+  :root{--pad-x:28px;--pad-y:80px;}
+  body{font-size:16px;}
+  .split > .col-head,.split > .col-body{grid-column:1 / -1;}
+  .duo{grid-template-columns:1fr;gap:56px;}
+  .fork,.tiers,.contacts,.field-row{grid-template-columns:1fr;}
+  .tiers{gap:20px;}
+  .tier.anchor{transform:none;padding-bottom:44px;}
+  .grid-4,.seq{grid-template-columns:1fr;}
+  .case-body .lhs,.case-body .rhs{grid-column:1 / -1;}
+  .case-body{gap:36px;}
+  .foot-grid{grid-template-columns:1fr 1fr;gap:40px;}
+  .pull{padding:36px 28px;}
+  .hero{padding-top:96px;padding-bottom:80px;}
+  .hero-mark{display:none;}
+  .spine{padding-left:44px;}
+  .module::before{left:-36px;}
+  .spine::before,.spine-fill{left:8px;}
+  nav.primary{display:none;}
+  nav.primary.open{
+    display:flex;flex-direction:column;align-items:flex-start;gap:22px;
+    position:absolute;top:var(--nav-h);left:0;right:0;background:var(--ink);
+    padding:30px 28px 34px;border-bottom:1px solid var(--rule-dark);
+  }
+  .nav-toggle{display:block;}
+  .nav-cta{display:none;}
+  nav.primary.open .nav-cta{display:inline-block;}
+  .lockup .word{font-size:16px;letter-spacing:.16em;}
+  table{font-size:15px;}
+  th,td{padding:14px 12px;}
+}
+@media print{
+  header.nav,.hero-mark,.lattice{display:none;}
+  body{background:#fff;color:#000;}
+  .dark,.charcoal{background:#fff !important;color:#000 !important;}
+  .reveal{opacity:1;transform:none;}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ NAVIGATION ============ -->
+<header class="nav">
+  <button class="lockup" data-go="home" aria-label="Marquence — home">
+    <svg class="mark mark-draw" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+      <path d="M3.3 89.4 V26.2 L49.5 61.6" pathLength="300" stroke="#F5F5F0" stroke-width="6.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M49.5 61.6 L86.3 26.2 V89.4" pathLength="300" stroke="#F5F5F0" stroke-width="6.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M15.4 86.6 L96.7 10.6 M77.2 10.6 H96.7 V31.1" pathLength="300" stroke="#C9A227" stroke-width="6.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <span class="word">MARQUENCE</span>
+  </button>
+  <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+  <nav class="primary" id="primary-nav">
+    <button data-go="philosophy">Philosophy</button>
+    <button data-go="blueprint">Blueprint</button>
+    <button data-go="results">Results</button>
+    <button class="btn nav-cta" data-go="inquire">Request Diagnostic</button>
+  </nav>
+</header>
+
+<main id="main">
+
+<!-- ============================================================
+     PAGE 1 — HOME
+     ============================================================ -->
+<article class="page" id="page-home" hidden>
+
+  <section class="section dark hero">
+    <div class="lattice" aria-hidden="true"></div>
+    <svg class="hero-mark mark-draw" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+      <path d="M3.3 89.4 V26.2 L49.5 61.6" pathLength="300" stroke="#F5F5F0" stroke-width="6.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M49.5 61.6 L86.3 26.2 V89.4" pathLength="300" stroke="#F5F5F0" stroke-width="6.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M15.4 86.6 L96.7 10.6 M77.2 10.6 H96.7 V31.1" pathLength="300" stroke="#C9A227" stroke-width="6.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <div class="wrap">
+      <span class="eyebrow reveal">Brand Authority Consulting · India</span>
+      <h1 class="reveal">Your business is not too small.<br>It is too comparable.</h1>
+      <hr class="rule draw">
+      <p class="lead reveal">Capable enterprises plateau for one reason: the market has no articulated reason to treat them as the reference point rather than one of several adequate options. That is not a capital problem or a capability problem. It is a positional one — and positions are built, not awarded.</p>
+      <div class="actions reveal">
+        <button class="btn" data-go="inquire">Request a Positional Diagnostic</button>
+        <button class="btn-text" data-go="blueprint">See the method →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE DIAGNOSIS -->
+  <section class="section light">
+    <div class="wrap">
+      <span class="eyebrow reveal">The Diagnosis</span>
+      <h2 class="reveal">One market. One constraint. One discipline.</h2>
+      <hr class="rule draw short">
+      <div class="reveal" style="margin-top:64px;max-width:64ch">
+        <h3>South India — The Brand Ceiling</h3>
+        <hr class="rule grey" style="margin:24px 0 28px">
+        <p class="measure">Tens of thousands of well-run enterprises stall in the ₹2–15 crore band. Demand is not the issue. Product quality is not the issue. Working capital is not the issue.</p>
+        <p class="measure">What is missing is a defensible position. Without one, the enterprise is drawn into price comparison. Price comparison caps margin. Capped margin caps reinvestment. Capped reinvestment caps growth.</p>
+        <p class="measure">This is a brand-architecture failure presenting as a growth failure — and it is almost always misdiagnosed as a marketing budget problem.</p>
+      </div>
+      <p class="serif-line reveal" style="margin-top:96px;max-width:36ch">The constraint is solved by a single discipline: the deliberate architecture of authority.</p>
+    </div>
+  </section>
+
+  <!-- WHAT CHANGES -->
+  <section class="section dark">
+    <div class="wrap">
+      <div class="split">
+        <div class="col-head reveal">
+          <span class="eyebrow">What Changes</span>
+          <h2>We do not build brand identity. We architect market influence.</h2>
+        </div>
+        <div class="col-body reveal" style="align-self:end">
+          <p class="lead">The transition from <em>known</em> to <em>authoritative</em> is not cosmetic. It is economic. It unlocks three specific assets, each with an observable outcome.</p>
+        </div>
+      </div>
+      <div class="grid-4" style="grid-template-columns:repeat(3,1fr)">
+        <div class="card reveal">
+          <span class="num">01</span>
+          <h3>Pricing Power</h3>
+          <div class="meta"><span>Mechanism</span>Positioning that removes you from direct comparison sets.</div>
+          <div class="meta"><span>Outcome</span>Ability to hold or raise price without volume loss. Target margin expansion: 400–1,200 bps.</div>
+        </div>
+        <div class="card reveal">
+          <span class="num">02</span>
+          <h3>Investor Confidence</h3>
+          <div class="meta"><span>Mechanism</span>Narrative architecture and a diligence-ready proof structure.</div>
+          <div class="meta"><span>Outcome</span>Faster diligence cycles, improved valuation multiples, a wider investor set.</div>
+        </div>
+        <div class="card reveal">
+          <span class="num">03</span>
+          <h3>Category Leverage</h3>
+          <div class="meta"><span>Mechanism</span>Thought leadership and media architecture that shapes the language of the sector.</div>
+          <div class="meta"><span>Outcome</span>Inbound demand, speaking and partnership flow, defensibility against imitation.</div>
+        </div>
+      </div>
+      <blockquote class="pull reveal">Definitions are lagging indicators. A market does not first decide who the authority is and then observe the evidence — it observes the signals, converges on an interpretation, and only afterwards writes the definition.</blockquote>
+    </div>
+  </section>
+
+  <!-- THE INSTRUMENT -->
+  <section class="section light">
+    <div class="wrap">
+      <span class="eyebrow reveal">The Instrument</span>
+      <h2 class="reveal">The Marquence Influence Blueprint™</h2>
+      <hr class="rule draw short">
+      <p class="lead reveal">One proprietary methodology. Three integrated modules. Three to nine months, depending on mandate scale.</p>
+
+      <div class="seq" data-seq style="grid-template-columns:repeat(3,1fr)">
+        <div class="step reveal"><span class="snum">01</span><h4>Brand Architecture</h4><p>What the enterprise is, what it is not, and what it will be compared against.</p></div>
+        <div class="step reveal"><span class="snum">02</span><h4>Authority Positioning</h4><p>What the principal is known for, where it appears, and in what order it accumulates.</p></div>
+        <div class="step reveal"><span class="snum">03</span><h4>Investor Narrative</h4><p>The thesis, and the evidentiary structure that survives interrogation of it.</p></div>
+      </div>
+      <div class="seq-progress" data-seq-progress></div>
+
+      <p class="reveal" style="margin-top:44px;max-width:70ch;opacity:.78">The modules run in sequence because authority compounds in sequence. Positioning built before architecture collapses under scrutiny. Narrative built before proof invites the interrogation it cannot yet survive.</p>
+      <div class="actions reveal"><button class="btn-text" data-go="blueprint">Examine the full Blueprint →</button></div>
+    </div>
+  </section>
+
+  <!-- WHY THE MARKET IS OPEN -->
+  <section class="section charcoal">
+    <div class="wrap">
+      <div class="split">
+        <div class="col-head reveal">
+          <h2>The field is not crowded. It is mismatched.</h2>
+          <hr class="rule draw short">
+        </div>
+        <div class="col-body reveal">
+          <p class="measure">Global brand consultancies — Wolff Olins, Landor, Siegel+Gale, Interbrand — possess exactly the strategic rigour our clients require. They are also structured for Fortune 500 marketing departments, at engagement fees of US$250,000 to US$2 million and above.</p>
+          <p class="measure">Below them: digital agencies (tactical), business coaches (motivational), compliance firms (financial), accelerators (equity-focused).</p>
+          <p class="measure">Nothing occupies the space between. Consultancy-grade authority architecture, delivered founder-to-founder, priced for the emerging-market growth enterprise, and native to South India.</p>
+          <p class="serif-line" style="margin-top:44px">That space is the category. We named it: the Brand Authority Architect.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</article>
+
+<!-- ============================================================
+     PAGE 2 — THE PHILOSOPHY
+     ============================================================ -->
+<article class="page" id="page-philosophy" hidden>
+
+  <section class="section dark hero">
+    <div class="lattice" aria-hidden="true"></div>
+    <div class="wrap">
+      <span class="eyebrow reveal">The Operating Logic</span>
+      <h1 class="reveal">Power is not defined.<br>It is branded.</h1>
+      <hr class="rule draw">
+      <p class="lead reveal">This is not a slogan. It is the thesis the firm is built on, and it has two halves.</p>
+    </div>
+  </section>
+
+  <section class="section light">
+    <div class="wrap">
+      <div class="split">
+        <div class="col-head reveal">
+          <h2>Power is not defined.</h2>
+          <hr class="rule draw short">
+        </div>
+        <div class="col-body reveal">
+          <p class="serif-line" style="margin-bottom:32px">Definitions are lagging indicators.</p>
+          <p class="measure">A market does not first decide who the authority is and then observe the evidence. It observes the signals, converges on an interpretation, and only afterwards writes the definition. Titles, rankings, awards and analyst quadrants are downstream artefacts — they record a position that was already established somewhere else, by someone else, earlier.</p>
+          <p class="measure">Waiting to be defined is therefore not modesty. It is a structural error. It cedes the most valuable variable in the system to third parties operating on a delay, using criteria you did not set.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section charcoal">
+    <div class="wrap">
+      <div class="split">
+        <div class="col-head reveal">
+          <h2>It is branded.</h2>
+          <hr class="rule draw short">
+        </div>
+        <div class="col-body reveal">
+          <p class="measure">Branding, correctly understood, is not decoration. It is the act of claiming — of stamping an intended interpretation onto the market before the market forms one by default.</p>
+          <p class="measure">Every credible operator emits signals continuously, whether or not they are managed: pricing, packaging, language, association, and silence. Silence is a signal. Brand strategy is the discipline of making those signals deliberate, coherent and cumulative, so that the interpretation the market arrives at is the one you engineered.</p>
+          <p class="measure">When you control the signal system — story, proof, positioning, presence — you control the interpretation. When you control the interpretation, you set the terms of the exchange: what you charge, who returns your call, and which room you are invited into.</p>
+        </div>
+      </div>
+      <blockquote class="pull reveal">We decode the psychology of market dominance, and we build the systems that produce it.</blockquote>
+    </div>
+  </section>
+
+  <!-- THE NAME -->
+  <section class="section light">
+    <div class="wrap">
+      <span class="eyebrow reveal">The Name</span>
+      <h2 class="reveal">Marquence</h2>
+      <p class="reveal" style="color:var(--gold-muted);font-size:14px;letter-spacing:.14em;margin-top:14px">Mar-kwens</p>
+      <hr class="rule draw short">
+      <p class="lead reveal">The name fuses two ideas.</p>
+      <div class="duo" style="margin-top:56px">
+        <div class="reveal">
+          <h3><em>Marque</em></h3>
+          <hr class="rule grey" style="margin:22px 0 26px">
+          <p class="measure">The mark. The distinguishing stamp a maker presses into the work; the sign that separates the original from the imitation.</p>
+        </div>
+        <div class="reveal">
+          <h3><em>Sequence</em></h3>
+          <hr class="rule grey" style="margin:22px 0 26px">
+          <p class="measure">The ordered progression. The deliberate, compounding series of moves by which a mark becomes a reputation, a reputation becomes a position, and a position becomes power.</p>
+        </div>
+      </div>
+      <blockquote class="pull reveal plain" style="max-width:78ch">
+        <p><strong>Influence is not an event. It is a sequence.</strong> Companies that dominate their categories rarely do so because of a single breakthrough. They do so because they executed a deliberate progression of signals — positioning, narrative, proof, presence, pricing — in the right order, over enough time, with enough consistency that the market stopped comparing them and started referencing them.</p>
+        <p>Marquence is the firm that designs and executes that sequence.</p>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- THE PROMISE -->
+  <section class="section dark">
+    <div class="wrap">
+      <div class="split">
+        <div class="col-head reveal">
+          <span class="eyebrow">The Promise</span>
+          <h2>What becomes true in ninety days</h2>
+        </div>
+        <div class="col-body reveal" style="align-self:end">
+          <p class="lead">Three shifts. Each is behavioural, and each is observable.</p>
+        </div>
+      </div>
+      <table class="reveal">
+        <thead>
+          <tr><th style="width:16%">Shift</th><th style="width:40%">What you conclude</th><th>What it changes</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Decoded</strong></td>
+            <td>“This firm understands the mechanics of authority, not merely its aesthetics.”</td>
+            <td>The problem stops being described as a marketing problem and starts being diagnosed as a positioning problem.</td>
+          </tr>
+          <tr>
+            <td><strong>Equipped</strong></td>
+            <td>“I have been handed a system, not a sentiment.”</td>
+            <td>Decisions on pricing, partnerships and communication begin running through a single architecture instead of ad-hoc instinct.</td>
+          </tr>
+          <tr>
+            <td><strong>Compelled</strong></td>
+            <td>“Influence is constructed, not conferred — and construction has begun.”</td>
+            <td>You shift from waiting for recognition to manufacturing it on a defined schedule.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section dark">
+    <div class="wrap">
+      <h2 class="reveal">Strategy as leverage.</h2>
+      <hr class="rule draw short">
+      <p class="lead reveal">Marquence is not a brand identity studio. We are authority architects for a generation of leaders who intend to set the terms of their industries rather than accept them.</p>
+      <div class="actions reveal">
+        <button class="btn" data-go="inquire">Request a Positional Diagnostic</button>
+        <button class="btn-text" data-go="blueprint">See the Blueprint →</button>
+      </div>
+    </div>
+  </section>
+
+</article>
+
+<!-- ============================================================
+     PAGE 3 — THE BLUEPRINT
+     ============================================================ -->
+<article class="page" id="page-blueprint" hidden>
+
+  <section class="section dark hero">
+    <div class="lattice" aria-hidden="true"></div>
+    <div class="wrap">
+      <span class="eyebrow reveal">The Methodology</span>
+      <h1 class="reveal">The Marquence<br>Influence Blueprint™</h1>
+      <hr class="rule draw">
+      <p class="lead reveal">Three integrated modules. One sequence. Three to nine months, depending on mandate scale. This is the instrument every engagement runs through — not a menu of services, but an ordered progression in which each stage makes the next one possible.</p>
+    </div>
+  </section>
+
+  <!-- FOUR MODULES — vertical spine -->
+  <section class="section light">
+    <div class="wrap">
+      <span class="eyebrow reveal">The Four Modules</span>
+      <h2 class="reveal">Sequence is the product.</h2>
+      <hr class="rule draw short">
+
+      <div class="spine" data-spine>
+        <div class="spine-fill" data-spine-fill></div>
+
+        <div class="module reveal">
+          <span class="mnum">Module 01</span>
+          <h3>Brand Architecture</h3>
+          <div class="when">Delivered: Month 1</div>
+          <p class="scope">Positioning framework. Brand narrative. Identity system. Portfolio architecture.</p>
+          <p class="measure">We establish what the enterprise is, what it is not, and what it will be compared against. Most positioning work fails here by starting with expression instead of structure — the result looks distinctive and defends nothing. Architecture first: the hierarchy of what you own, what you claim, and what you deliberately concede.</p>
+          <p class="out"><b>Output:</b> Brand strategy document, positioning statement, portfolio map.</p>
+        </div>
+
+        <div class="module reveal">
+          <span class="mnum">Module 02</span>
+          <h3>Authority Positioning</h3>
+          <div class="when">Delivered: Months 1–2</div>
+          <p class="scope">Founder narrative. Thought-leadership architecture. Media presence design. Credibility markers.</p>
+          <p class="measure">The enterprise has a position; the principal must have one too. In founder-led businesses and family groups, the market reads the individual and the entity as a single signal. This module makes that signal deliberate — what the principal is known for, where that knowledge appears, and in what order it accumulates.</p>
+          <p class="out"><b>Output:</b> Founder positioning brief, 12-month authority calendar, credibility-marker inventory.</p>
+        </div>
+
+        <div class="module reveal">
+          <span class="mnum">Module 03</span>
+          <h3>Investor Narrative</h3>
+          <div class="when">Delivered: Month 2</div>
+          <p class="scope">Investment thesis construction. Data-room structure. Diligence-readiness framework.</p>
+          <p class="measure">Capital does not price businesses. It prices its own confidence in businesses. The same numbers, presented inside a coherent thesis rather than a deck of assertions, move both the speed of diligence and the multiple at its end. We build the thesis, then build the evidentiary structure that survives interrogation of it.</p>
+          <p class="out"><b>Output:</b> Investment thesis, data-room architecture, diligence-readiness assessment.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSTRUMENTS -->
+  <section class="section charcoal">
+    <div class="wrap">
+      <h2 class="reveal">Two proprietary instruments</h2>
+      <hr class="rule draw short">
+      <div class="duo" style="margin-top:56px">
+        <div class="reveal">
+          <h3>Pricing Power Index™</h3>
+          <hr class="rule grey" style="margin:22px 0 26px">
+          <p class="measure">A diagnostic that scores an enterprise’s current positional leverage — the degree to which it can move price without moving volume. It produces a baseline in week one and a re-measurement at engagement close. It is also how we hold ourselves accountable to the fourth line of our mission.</p>
+        </div>
+        <div class="reveal">
+          <h3>Case Study Protocol</h3>
+          <hr class="rule grey" style="margin:22px 0 26px">
+          <p class="measure">A documentation framework applied from week one, capturing outcomes as they occur rather than reconstructing them afterwards. Clients receive their own documented proof asset; we build the category’s evidence base. Both parties benefit from the same discipline.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENGAGEMENT ARC -->
+  <section class="section light">
+    <div class="wrap">
+      <span class="eyebrow reveal">The Engagement Arc</span>
+      <h2 class="reveal">How an engagement runs</h2>
+      <hr class="rule draw short">
+      <div class="seq" data-seq>
+        <div class="step reveal">
+          <span class="when">Week 1</span><h4>Diagnosis</h4>
+          <p>Pricing Power Index™ assessment, founder and leadership interviews, market position audit.</p>
+          <p class="deliv">→ Positional diagnostic report</p>
+        </div>
+        <div class="step reveal">
+          <span class="when">Weeks 2–5</span><h4>Architecture</h4>
+          <p>Brand architecture workshop, positioning development, narrative construction.</p>
+          <p class="deliv">→ Brand strategy document, positioning statement</p>
+        </div>
+        <div class="step reveal">
+          <span class="when">Weeks 6–18</span><h4>Construction</h4>
+          <p>Identity execution, authority programme rollout, investor narrative build, implementation oversight.</p>
+          <p class="deliv">→ Brand system, authority calendar, investor narrative</p>
+        </div>
+        <div class="step reveal">
+          <span class="when">Weeks 19–24</span><h4>Consolidation</h4>
+          <p>Performance review, market response measurement, next-stage roadmap.</p>
+          <p class="deliv">→ Outcome report, 24-month trajectory roadmap</p>
+        </div>
+      </div>
+      <div class="seq-progress" data-seq-progress></div>
+      <p class="small reveal" style="margin-top:32px;opacity:.6;font-style:italic">Timeline shown for a six-month Tier 1 mandate. Tier 2 compresses to three months; Tier 3 extends to nine.</p>
+    </div>
+  </section>
+
+  <!-- INDIA PROGRAMMES -->
+  <section class="section dark" id="tiers-india">
+    <div class="wrap">
+      <span class="eyebrow reveal">Engagement Tiers</span>
+      <h2 class="reveal">India</h2>
+      <hr class="rule draw short">
+      <div class="tiers">
+        <div class="tier reveal">
+          <span class="tag">Tier 2</span>
+          <h3>Authority Foundations</h3>
+          <p class="who">Early-growth enterprises · ₹50 lakh – ₹2 Cr revenue</p>
+          <div class="price"><small>3 months</small>₹1.75L – ₹3L</div>
+          <p class="inc">Positioning framework, brand fundamentals, founder narrative, 6 strategy sessions.</p>
+          <p class="note">For enterprises that have found the model and now need the position. The entry mandate — deliberately scoped so the decision does not require a board.</p>
+        </div>
+        <div class="tier anchor reveal">
+          <span class="anchor-flag">Anchor</span>
+          <span class="tag">Tier 1</span>
+          <h3>Authority Architecture Program</h3>
+          <p class="who">Scale-ready enterprises · ₹2–15 Cr revenue</p>
+          <div class="price"><small>6 months</small>₹4.5L – ₹7L</div>
+          <p class="inc">Full brand architecture, authority positioning, investor narrative, 12 strategy sessions, Pricing Power Index™ diagnostic.</p>
+          <p class="note">The complete Blueprint. Built for the enterprise at the ceiling: proven model, competent operation, no defensible position. Outcome-linked pricing available for qualified clients.</p>
+        </div>
+        <div class="tier reveal">
+          <span class="tag">Tier 3</span>
+          <h3>Executive Authority Mandate</h3>
+          <p class="who">C-suite, promoter groups · ₹15 Cr+ enterprises</p>
+          <div class="price"><small>9 months</small>₹9L – ₹15L</div>
+          <p class="inc">Executive authority architecture, media and thought-leadership programme, board-level narrative, succession positioning, 18 sessions.</p>
+          <p class="note">For principals whose personal standing is a material asset of the enterprise — and, in family groups, for the transfer of that standing across a generation.</p>
+        </div>
+      </div>
+      <p class="small reveal" style="margin-top:48px;opacity:.6">Payment structure: 50% on commencement, 25% at midpoint, 25% on completion. Outcome-linked options available on Tier 1 for qualified clients.</p>
+    </div>
+  </section>
+
+  <section class="section light">
+    <div class="wrap">
+      <h2 class="reveal">Every engagement opens the same way.</h2>
+      <hr class="rule draw short">
+      <p class="lead reveal">Before any mandate is scoped, we run a Positional Diagnostic: a structured assessment of where your enterprise currently sits on the comparison–reference axis, and what it would take to move.</p>
+      <p class="reveal measure" style="margin-top:24px">It takes forty-five minutes. It is delivered by a senior strategist. It produces a written diagnostic, not a proposal.</p>
+      <div class="actions reveal">
+        <button class="btn" data-go="inquire">Request a Positional Diagnostic</button>
+        <button class="btn-text" data-go="results">See documented outcomes →</button>
+      </div>
+    </div>
+  </section>
+
+</article>
+
+<!-- ============================================================
+     PAGE 5 — RESULTS
+     ============================================================ -->
+<article class="page" id="page-results" hidden>
+
+  <section class="section dark hero" style="padding-bottom:100px">
+    <div class="lattice" aria-hidden="true"></div>
+    <div class="wrap">
+      <span class="eyebrow reveal">Documented Outcomes</span>
+      <h1 class="reveal" style="max-width:20ch">Influence is an outcome we are accountable for, not a claim we make.</h1>
+      <hr class="rule draw">
+      <p class="lead reveal">Every engagement opens with a Pricing Power Index™ baseline and closes with a re-measurement. What follows is what changed, measured against that baseline — not what we believe changed.</p>
+    </div>
+  </section>
+
+  <!-- MEASUREMENT FRAMEWORK -->
+  <section class="section light">
+    <div class="wrap">
+      <span class="eyebrow reveal">The Framework</span>
+      <h2 class="reveal">What we measure</h2>
+      <hr class="rule draw short">
+      <p class="lead reveal">Four outcome classes, tracked from week one through engagement close and at the twelve-month mark.</p>
+      <div class="grid-4">
+        <div class="card reveal"><span class="num">01</span><h3 style="font-size:21px">Pricing leverage</h3><p class="small" style="opacity:.78;margin-top:16px">Realised price movement against volume held. Measured as basis-point margin expansion and as price premium sustained over a defined number of quarters.</p></div>
+        <div class="card reveal"><span class="num">02</span><h3 style="font-size:21px">Capital access</h3><p class="small" style="opacity:.78;margin-top:16px">Diligence cycle duration, valuation multiple movement, breadth of investor set engaged.</p></div>
+        <div class="card reveal"><span class="num">03</span><h3 style="font-size:21px">Market access</h3><p class="small" style="opacity:.78;margin-top:16px">Jurisdictions entered, partnerships formalised, procurement processes qualified into.</p></div>
+        <div class="card reveal"><span class="num">04</span><h3 style="font-size:21px">Category position</h3><p class="small" style="opacity:.78;margin-top:16px">Inbound enquiry volume and quality, speaking and media positions held, share of category language.</p></div>
+      </div>
+      <blockquote class="pull reveal plain" style="max-width:76ch"><strong>Note on attribution.</strong> We report what moved during and after the engagement, alongside what else was changing in the business at the time. Positioning work is one input among several. Claiming sole causation would fail our own first tone rule.</blockquote>
+    </div>
+  </section>
+
+  <!-- CASE STUDIES -->
+  <section class="section charcoal">
+    <div class="wrap">
+      <span class="eyebrow reveal">Case Record</span>
+      <h2 class="reveal">Baseline to outcome</h2>
+      <hr class="rule draw short">
+
+      <div class="placeholder-note reveal" style="margin-top:40px;max-width:78ch">
+        <strong>Build note — read before publishing.</strong> The three cases below are structural templates with placeholder data, written to demonstrate format, length and register. They are not real engagements and must not be published as though they were. Populate with documented outcomes from lighthouse clients, with written permission on file. Where a client requires anonymity, use the format shown in Case 03 — sector and scale disclosed, identity withheld.
+      </div>
+
+      <!-- CASE 01 -->
+      <div class="case reveal">
+        <div class="stamp">Placeholder · Precision Engineering · Coimbatore · ₹11 Cr</div>
+        <div class="prog">Authority Architecture Program · 6 months</div>
+        <p class="headline">Held a 14% price increase across the full order book with no volume loss over three consecutive quarters.</p>
+        <div class="case-body">
+          <div class="lhs">
+            <h4>The constraint</h4>
+            <p>A twenty-two-year-old manufacturer with tier-one certification and near-zero rejection rates, competing in tenders where the only visible variable was price. Buyers treated four suppliers as interchangeable. Margin had compressed for six straight quarters despite operational improvement.</p>
+            <h4 style="margin-top:34px">The diagnosis</h4>
+            <p>Pricing Power Index™ baseline: 22/100. The enterprise held significant technical differentiation and communicated none of it — every buyer-facing document described capacity, not capability.</p>
+            <h4 style="margin-top:34px">What we built</h4>
+            <ul>
+              <li>Positioning architecture built on tolerance consistency rather than capacity, removing the enterprise from the capacity-comparison set</li>
+              <li>Technical authority programme: MD published in two trade journals, appointed to a sector standards committee</li>
+              <li>Buyer-facing evidence structure replacing the capability deck</li>
+              <li>Investor narrative in preparation for a growth-capital round</li>
+            </ul>
+          </div>
+          <div class="rhs">
+            <h4>Outcomes</h4>
+            <table style="margin-top:20px">
+              <thead><tr><th>Measure</th><th>Baseline</th><th>Month 12</th><th>Delta</th></tr></thead>
+              <tbody>
+                <tr><td>Pricing Power Index™</td><td class="num-col">22</td><td class="num-col">61</td><td class="num-col">+39</td></tr>
+                <tr><td>Realised price</td><td class="num-col">Index 100</td><td class="num-col">Index 114</td><td class="num-col">+14%</td></tr>
+                <tr><td>Gross margin</td><td class="num-col">18.2%</td><td class="num-col">26.4%</td><td class="num-col">+820 bps</td></tr>
+                <tr><td>Inbound qualified enquiries / quarter</td><td class="num-col">3</td><td class="num-col">11</td><td class="num-col">+267%</td></tr>
+              </tbody>
+            </table>
+            <p class="small" style="opacity:.55;margin-top:16px;font-style:italic">Measurement window: engagement close + 6 months.</p>
+            <blockquote>“We didn’t change what we manufacture. We changed what we’re compared against. The tender conversations are different now — they start from specification instead of price.”<cite>— [Name], Managing Director</cite></blockquote>
+          </div>
+        </div>
+      </div>
+
+      <!-- CASE 02 -->
+      <div class="case reveal">
+        <div class="stamp">Placeholder · B2B SaaS · Bengaluru · ₹6 Cr ARR</div>
+        <div class="prog">Authority Architecture Program · 6 months</div>
+        <p class="headline">Closed a Series A at a 2.3× improvement on the prior round’s multiple, with diligence completed in 31 days.</p>
+        <div class="case-body">
+          <div class="lhs">
+            <h4>The constraint</h4>
+            <p>Strong retention and a credible product, but a fundraising narrative assembled from feature descriptions and market-size assertions. Two prior processes had stalled at the same point — investors could not articulate what category the company would win.</p>
+            <h4 style="margin-top:34px">The diagnosis</h4>
+            <p>Pricing Power Index™ baseline: 34/100. The gap was narrative structure, not performance: the numbers supported a thesis nobody had written down.</p>
+            <h4 style="margin-top:34px">What we built</h4>
+            <ul>
+              <li>Investment thesis construction — category definition, wedge, and the specific claim to defensibility</li>
+              <li>Data-room architecture sequenced to answer objections in the order investors raise them</li>
+              <li>Founder authority positioning: category-defining long-form publication programme</li>
+              <li>Diligence-readiness assessment with a remediation schedule completed pre-process</li>
+            </ul>
+          </div>
+          <div class="rhs">
+            <h4>Outcomes</h4>
+            <table style="margin-top:20px">
+              <thead><tr><th>Measure</th><th>Baseline</th><th>Post-round</th><th>Delta</th></tr></thead>
+              <tbody>
+                <tr><td>Pricing Power Index™</td><td class="num-col">34</td><td class="num-col">68</td><td class="num-col">+34</td></tr>
+                <tr><td>Diligence cycle</td><td class="num-col">94 days (stalled)</td><td class="num-col">31 days</td><td class="num-col">−67%</td></tr>
+                <tr><td>Valuation multiple</td><td class="num-col">Index 100</td><td class="num-col">Index 230</td><td class="num-col">+130%</td></tr>
+                <tr><td>Term sheets received</td><td class="num-col">1</td><td class="num-col">4</td><td class="num-col">+3</td></tr>
+              </tbody>
+            </table>
+            <p class="small" style="opacity:.55;margin-top:16px;font-style:italic">Measurement window: engagement close + 4 months.</p>
+            <blockquote>“The numbers were the same numbers. What changed was that there was finally a thesis they sat inside. Diligence stopped being an interrogation and became a verification.”<cite>— [Name], Co-founder &amp; CEO</cite></blockquote>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section light">
+    <div class="wrap">
+      <h2 class="reveal">Your baseline is measurable today.</h2>
+      <hr class="rule draw short">
+      <p class="lead reveal">The Pricing Power Index™ assessment that opens every engagement can be run independently. It scores your current positional leverage and identifies the specific constraints capping it.</p>
+      <div class="actions reveal">
+        <button class="btn" data-go="inquire">Request a Positional Diagnostic</button>
+        <button class="btn-text" data-go="blueprint">Understand the method →</button>
+      </div>
+    </div>
+  </section>
+
+</article>
+
+<!-- ============================================================
+     PAGE 6 — INQUIRE
+     ============================================================ -->
+<article class="page" id="page-inquire" hidden>
+
+  <section class="section dark hero" style="padding-bottom:70px">
+    <div class="lattice" aria-hidden="true"></div>
+    <div class="wrap">
+      <span class="eyebrow reveal">Begin</span>
+      <h1 class="reveal">Request a Positional Diagnostic</h1>
+      <hr class="rule draw">
+      <p class="lead reveal">Forty-five minutes with a senior strategist. We assess where your enterprise currently sits on the comparison-to-reference axis, score your positional leverage against the Pricing Power Index™, and identify the specific constraints capping it.</p>
+      <p class="lead reveal" style="margin-top:18px">You receive a written diagnostic. Not a proposal, and not a pitch.</p>
+      <p class="reveal" style="color:var(--gold);font-size:15px;max-width:60ch;margin-top:32px">We take a limited number of mandates and decline more enquiries than we accept. The questions below are how we determine fit — in both directions.</p>
+    </div>
+  </section>
+
+  <!-- FORM -->
+  <section class="section charcoal" id="form-block">
+    <div class="wrap">
+      <h2 class="reveal">Seven questions.</h2>
+      <hr class="rule draw short">
+      <p class="reveal" style="opacity:.7">Two minutes. All fields required unless marked otherwise.</p>
+
+      <form class="form reveal" id="qualify" novalidate>
+        <div class="field-row">
+          <div class="field">
+            <label for="f-name">Full name</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required>
+            <div class="err">Required.</div>
+          </div>
+          <div class="field">
+            <label for="f-company">Company or group name</label>
+            <input id="f-company" name="company" type="text" autocomplete="organization" required>
+            <div class="err">Required.</div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="f-role">Your role</label>
+          <select id="f-role" name="role" required>
+            <option value="">Select</option>
+            <option>Founder / Co-founder</option>
+            <option>Managing Director / CEO</option>
+            <option>Promoter / Family principal</option>
+            <option>C-suite executive</option>
+            <option>Other senior leadership</option>
+          </select>
+          <div class="err">Required.</div>
+          <p class="help">We work directly with decision-makers. Engagements routed through intermediaries are declined.</p>
+        </div>
+
+        <div class="field">
+          <label for="f-geo">Where are you building?</label>
+          <select id="f-geo" name="geo" required>
+            <option value="">Select</option>
+            <option value="in-dom">South India — scaling domestically</option>
+            <option value="other">Other market</option>
+          </select>
+          <div class="err">Required.</div>
+          <p class="help">Our practice is structured around the Indian market. We are candid when a mandate sits outside it.</p>
+        </div>
+
+        <div class="field">
+          <label for="f-rev">Current annual revenue</label>
+          <select id="f-rev" name="revenue" required>
+            <option value="">Select your market above first</option>
+          </select>
+          <div class="err">Required.</div>
+          <p class="help">Engagement scale is matched to enterprise scale. This determines which programme is relevant, and whether one is.</p>
+        </div>
+
+        <div class="field">
+          <label for="f-constraint">What is currently capping growth?</label>
+          <select id="f-constraint" name="constraint" required>
+            <option value="">Select</option>
+            <option>We compete on price and cannot move off it</option>
+            <option>We’re invisible to the buyers who matter most</option>
+            <option>Fundraising conversations stall at the same point</option>
+            <option>We’re competent in a new market but have no standing there</option>
+            <option>Our category has commoditised around us</option>
+            <option>Succession — transferring standing to the next generation</option>
+            <option>Something else</option>
+          </select>
+          <div class="err">Required.</div>
+        </div>
+
+        <div class="field">
+          <label for="f-context">Describe the constraint in your own words <span class="opt">(optional)</span></label>
+          <textarea id="f-context" name="context" rows="4" placeholder="The more specific this is, the more useful the diagnostic will be."></textarea>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="f-email">Email</label>
+            <input id="f-email" name="email" type="email" autocomplete="email" required>
+            <div class="err">Enter a valid email address.</div>
+          </div>
+          <div class="field">
+            <label for="f-phone">Phone (with country code)</label>
+            <input id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder="+91 / +971" required>
+            <div class="err">Required.</div>
+          </div>
+        </div>
+
+        <div class="form-foot">
+          <button type="submit" class="btn">Request Diagnostic</button>
+          <p class="small" style="opacity:.6;margin:0;max-width:38ch">We respond within two business days. Every enquiry receives a reply, including the ones we decline.</p>
+        </div>
+        <p class="small" style="opacity:.45;margin-top:28px;max-width:66ch">Your information is used to assess fit and prepare your diagnostic. It is not shared, sold, or added to any marketing list without your explicit opt-in.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- DIRECT CONTACT -->
+  <section class="section light">
+    <div class="wrap">
+      <h2 class="reveal">Or reach us directly.</h2>
+      <hr class="rule draw short">
+      <div class="contacts reveal" style="grid-template-columns:1fr;max-width:420px">
+        <div>
+          <div class="who">India — Bengaluru</div>
+          <div class="name">[Founder name]</div>
+          <div class="role">Founder &amp; Lead Strategist</div>
+          <div class="det" style="margin-top:12px">[email] · [phone]</div>
+        </div>
+      </div>
+      <p class="small reveal" style="margin-top:32px;opacity:.62;max-width:56ch">Aspire Coworks, No.39/7-1, Third Floor, 7th Main, Opposite Dr. Ambedkar College Ground, Appareddy Palya, Indiranagar, Bengaluru North – 560038</p>
+      <p class="small reveal" style="margin-top:36px;opacity:.5;max-width:62ch">Publish real names before launch. A shared inbox on a page selling authority is a contradiction the buyer will notice immediately.</p>
+    </div>
+  </section>
+</article>
+
+<!-- ============================================================
+     /inquire/diagnostic — qualified route
+     ============================================================ -->
+<article class="page" id="page-diagnostic" hidden>
+  <section class="section dark hero">
+    <div class="lattice" aria-hidden="true"></div>
+    <div class="wrap">
+      <span class="eyebrow reveal">Qualified</span>
+      <h1 class="reveal">Choose a time.</h1>
+      <hr class="rule draw">
+      <p class="lead reveal" id="diag-signal">Your enquiry has been routed to a senior strategist.</p>
+      <div class="reveal" style="margin-top:48px;border:1px solid var(--rule-dark);padding:56px 48px;max-width:780px">
+        <div class="eyebrow" style="margin-bottom:18px">Positional Diagnostic · 45 minutes</div>
+        <p style="opacity:.8;max-width:56ch">Scheduling embed mounts here at build — a single 45-minute Positional Diagnostic event type, senior-led, with no other bookable durations exposed. A confirmation email follows with the pre-read and intake brief.</p>
+        <div class="actions"><button class="btn" data-go="home">Return to the site</button></div>
+      </div>
+    </div>
+  </section>
+</article>
+
+<!-- ============================================================
+     /not-a-fit — declined route
+     ============================================================ -->
+<article class="page" id="page-notafit" hidden>
+  <section class="section dark hero">
+    <div class="lattice" aria-hidden="true"></div>
+    <div class="wrap">
+      <h1 class="reveal">Not yet — and that’s a real answer.</h1>
+      <hr class="rule draw">
+      <p class="lead reveal">Our programmes are built for enterprises that have proven the model and are now constrained by position rather than capability or capital. Below a certain scale, positioning work returns less than the same investment made in the business itself. Telling you that is more useful than taking the engagement.</p>
+    </div>
+  </section>
+  <section class="section light">
+    <div class="wrap">
+      <h2 class="reveal">Two things that will be genuinely useful now</h2>
+      <hr class="rule draw short">
+      <div class="duo" style="margin-top:52px">
+        <div class="reveal">
+          <h3>Sector Market Playbook</h3>
+          <hr class="rule grey" style="margin:22px 0 26px">
+          <p class="measure">Our working document on how positioning operates in your category, including the specific signals that begin to matter as you approach the ₹2 Cr threshold.</p>
+          <div class="actions"><button class="btn">Download the playbook</button></div>
+        </div>
+        <div class="reveal">
+          <h3>Quarterly market briefing</h3>
+          <hr class="rule grey" style="margin:22px 0 26px">
+          <p class="measure">Four emails a year on positioning, pricing leverage and Indian market movement. No sequences, no automation, unsubscribe in one click.</p>
+          <div class="actions"><button class="btn">Subscribe</button></div>
+        </div>
+      </div>
+      <p class="serif-line reveal" style="margin-top:88px">When you cross the threshold, come back. We keep the file.</p>
+    </div>
+  </section>
+</article>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="foot-grid">
+    <div>
+      <div class="lockup" style="cursor:default">
+        <svg class="mark" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+          <path d="M3.3 89.4 V26.2 L49.5 61.6" pathLength="300" stroke="#F5F5F0" stroke-width="6.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M49.5 61.6 L86.3 26.2 V89.4" pathLength="300" stroke="#F5F5F0" stroke-width="6.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M15.4 86.6 L96.7 10.6 M77.2 10.6 H96.7 V31.1" pathLength="300" stroke="#C9A227" stroke-width="6.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="word">MARQUENCE</span>
+      </div>
+      <p class="foot-statement">Power is not defined. It is branded.</p>
+      <p class="small" style="margin-top:20px;opacity:.5;max-width:34ch">Aspire Coworks, No.39/7-1, Third Floor, 7th Main, Opposite Dr. Ambedkar College Ground, Appareddy Palya, Indiranagar, Bengaluru North – 560038</p>
+    </div>
+    <div>
+      <h5>Navigate</h5>
+      <ul>
+        <li><button data-go="philosophy">Philosophy</button></li>
+        <li><button data-go="blueprint">Blueprint</button></li>
+        <li><button data-go="results">Results</button></li>
+        <li><button data-go="inquire">Inquire</button></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Legal</h5>
+      <ul>
+        <li><a href="#" onclick="return false">Privacy</a></li>
+        <li><a href="#" onclick="return false">Terms of engagement</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-base">
+    <span>© 2026 Marquence. Beyond Branding Into Influence.</span>
+    <span>Brand Authority Consulting · India</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---------- router ---------- */
+  var ROUTES = {
+    home:"/", philosophy:"/philosophy", blueprint:"/blueprint",
+    results:"/results", inquire:"/inquire", diagnostic:"/inquire/diagnostic", notafit:"/not-a-fit"
+  };
+  var TITLES = {
+    home:"Marquence | Brand Authority Consulting — India",
+    philosophy:"The Philosophy | Marquence — Power is Not Defined. It is Branded.",
+    blueprint:"Founder Positioning Strategy | The Influence Blueprint™",
+    results:"Documented Outcomes | Brand Positioning Case Studies — India",
+    inquire:"Request a Positional Diagnostic | Marquence",
+    diagnostic:"Positional Diagnostic | Marquence",
+    notafit:"Not yet | Marquence"
+  };
+  var NAV_PAGES = ["philosophy","blueprint","results"];
+  var pages = {};
+  document.querySelectorAll(".page").forEach(function(p){ pages[p.id.replace("page-","")] = p; });
+
+  function go(name, anchor){
+    if(!pages[name]) name = "home";
+    Object.keys(pages).forEach(function(k){ pages[k].hidden = (k !== name); });
+    document.title = TITLES[name] || TITLES.home;
+    if(location.hash !== "#" + ROUTES[name]){
+      try { history.pushState({p:name}, "", "#" + ROUTES[name]); }
+      catch(err){ location.hash = ROUTES[name]; }
+    }
+    document.querySelectorAll("nav.primary button[data-go]").forEach(function(b){
+      if(NAV_PAGES.indexOf(b.dataset.go) > -1){
+        if(b.dataset.go === name) b.setAttribute("aria-current","page");
+        else b.removeAttribute("aria-current");
+      }
+    });
+    document.querySelector("nav.primary").classList.remove("open");
+    document.querySelector(".nav-toggle").setAttribute("aria-expanded","false");
+    resetMotion(pages[name]);
+    if(anchor){
+      var t = document.getElementById(anchor);
+      window.scrollTo(0,0);
+      if(t) setTimeout(function(){ t.scrollIntoView({behavior: reduce ? "auto" : "smooth", block:"start"}); }, 60);
+    } else {
+      window.scrollTo(0,0);
+    }
+  }
+  function routeFromHash(){
+    var h = (location.hash || "").replace(/^#/,"");
+    var name = "home";
+    Object.keys(ROUTES).forEach(function(k){ if(ROUTES[k] === h) name = k; });
+    go(name);
+  }
+  window.addEventListener("popstate", routeFromHash);
+
+  document.addEventListener("click", function(e){
+    var el = e.target.closest("[data-go]");
+    if(!el) return;
+    e.preventDefault();
+    go(el.dataset.go, el.dataset.anchor);
+  });
+
+  document.querySelector(".nav-toggle").addEventListener("click", function(){
+    var nav = document.querySelector("nav.primary");
+    var open = nav.classList.toggle("open");
+    this.setAttribute("aria-expanded", String(open));
+  });
+
+  /* ---------- motion: fade + 12px rise, rules draw from left ---------- */
+  var io = null;
+  if(!reduce && "IntersectionObserver" in window){
+    io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ en.target.classList.add("in"); io.unobserve(en.target); }
+      });
+    }, {rootMargin:"0px 0px -8% 0px", threshold:0.12});
+    document.querySelectorAll(".reveal,.rule.draw,.trace").forEach(function(el){ io.observe(el); });
+  } else {
+    document.querySelectorAll(".reveal,.rule.draw,.trace").forEach(function(el){ el.classList.add("in"); });
+  }
+  function resetMotion(page){
+    if(!page || !io) return;
+    page.querySelectorAll(".reveal,.rule.draw,.trace").forEach(function(el){
+      el.classList.remove("in"); io.observe(el);
+    });
+  }
+
+  /* ---------- the spine: gold line draws downward with scroll ---------- */
+  function drawSpines(){
+    if(reduce){
+      document.querySelectorAll("[data-spine-fill]").forEach(function(f){ f.style.height = "100%"; });
+      document.querySelectorAll(".module").forEach(function(m){ m.classList.add("lit"); });
+      return;
+    }
+    document.querySelectorAll("[data-spine]").forEach(function(sp){
+      var fill = sp.querySelector("[data-spine-fill]");
+      if(!fill) return;
+      var r = sp.getBoundingClientRect();
+      var anchor = window.innerHeight * 0.62;
+      var pct = Math.max(0, Math.min(1, (anchor - r.top) / r.height));
+      fill.style.height = (pct * 100) + "%";
+      var lit = r.top + r.height * pct;
+      sp.querySelectorAll(".module").forEach(function(m){
+        m.classList.toggle("lit", m.getBoundingClientRect().top + 12 <= lit);
+      });
+    });
+    document.querySelectorAll("[data-seq]").forEach(function(sq){
+      var bar = sq.parentNode.querySelector("[data-seq-progress]");
+      if(!bar) return;
+      var r = sq.getBoundingClientRect();
+      var pct = Math.max(0, Math.min(1, (window.innerHeight * 0.72 - r.top) / (r.height * 0.8)));
+      bar.style.width = (pct * 100) + "%";
+    });
+  }
+  var ticking = false;
+  window.addEventListener("scroll", function(){
+    if(ticking) return;
+    ticking = true;
+    requestAnimationFrame(function(){ drawSpines(); ticking = false; });
+  }, {passive:true});
+  window.addEventListener("resize", drawSpines);
+
+  /* ---------- inquire form ---------- */
+  var REV_INDIA = ["Below ₹50 lakh","₹50 lakh – ₹2 Cr","₹2 Cr – ₹15 Cr","₹15 Cr – ₹50 Cr","Above ₹50 Cr"];
+  var geo = document.getElementById("f-geo"), rev = document.getElementById("f-rev");
+  geo.addEventListener("change", function(){
+    rev.innerHTML = "";
+    var first = document.createElement("option");
+    first.value = ""; first.textContent = "Select";
+    rev.appendChild(first);
+    REV_INDIA.forEach(function(o){
+      var op = document.createElement("option"); op.value = o; op.textContent = o; rev.appendChild(op);
+    });
+  });
+
+  // §03.6 qualification logic — routes to diagnostic or /not-a-fit
+  function qualify(g, r){
+    if(!g) return {ok:false};
+    if(r === "Below ₹50 lakh") return {ok:false};
+    if(r === "₹50 lakh – ₹2 Cr") return {ok:true, prog:"Tier 2 — Authority Foundations", pri:"standard"};
+    if(r === "₹2 Cr – ₹15 Cr") return {ok:true, prog:"Tier 1 — Authority Architecture Program", pri:"priority"};
+    return {ok:true, prog:"Tier 3 — Executive Authority Mandate", pri:"priority"};
+  }
+
+  var form = document.getElementById("qualify");
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    var valid = true;
+    form.querySelectorAll("input[required],select[required]").forEach(function(el){
+      var f = el.closest(".field");
+      var bad = !el.value.trim() || (el.type === "email" && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value));
+      f.classList.toggle("invalid", bad);
+      if(bad && valid){ el.focus(); valid = false; }
+    });
+    if(!valid) return;
+
+    var res = qualify(geo.value, rev.value);
+    if(res.ok){
+      document.getElementById("diag-signal").textContent =
+        "Your enquiry has been routed as " + res.pri + ". On current inputs the relevant programme is " +
+        res.prog + ". The diagnostic is not a scoping call for it — we confirm the fit, or we tell you there isn’t one.";
+      go("diagnostic");
+    } else {
+      go("notafit");
+    }
+  });
+  form.querySelectorAll("input,select").forEach(function(el){
+    el.addEventListener("input", function(){ el.closest(".field").classList.remove("invalid"); });
+  });
+
+  /* ---------- boot ---------- */
+  routeFromHash();
+  drawSpines();
+})();
+</script>
+</body>
+</html>
